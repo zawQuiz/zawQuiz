@@ -1,8 +1,8 @@
 {
-  "name": "frontend",
-  "version": "0.0.0",
+  "name": "zawQuiz",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
+    "watch": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },
