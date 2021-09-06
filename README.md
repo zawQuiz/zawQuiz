@@ -11,6 +11,11 @@
 
 <p>App designed to make preparing for licensure exams less boring, by providing options to quiz friends!</p>
 <p>Frontend made with vue3 based on composition api combined with typescript. For backend we used nodejs with typescript.</p>
+
+Version naming convention: `x.y.z.`, where:
+* `x` -> major update,
+* `y` -> minor update,
+* `z` -> bugfixes.
 <p>Design: <a href="https://www.figma.com/file/JTSID0J1NLaALDLA1PFEWv/EE09?node-id=0%3A1">click</a></p>
 
 ## Branches
