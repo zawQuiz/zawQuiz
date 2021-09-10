@@ -1,8 +1,5 @@
 #!/bin/sh
-echo "$(dirname "$0")"
-cd "$(dirname "$1")"
-echo "$(dirname "$0")"
-echo "linting.."
+
 npm run lint:script:fix
 npm run lint:style:fix
 npx prettier -w -u .
