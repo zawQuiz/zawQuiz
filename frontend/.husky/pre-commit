@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "$(dirname "$0")"
-echo "$(dirname)"
+echo "$(dirname "$1")"
 echo "linting.."
 npm run lint:script:fix
 npm run lint:style:fix
