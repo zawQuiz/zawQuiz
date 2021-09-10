@@ -1,5 +1,4 @@
 echo "linting.."
-pwd
-npm run lint:script:fix
+cd frontend && npm run lint:script:fix
 npm run lint:style:fix
 npx prettier -w -u .
