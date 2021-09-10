@@ -13,22 +13,22 @@
 <p>Frontend made with vue3 based on composition api combined with typescript. For backend we used nodejs with typescript.</p>
 
 Version naming convention: `x.y.z.`, where:
-* `x` -> major update,
-* `y` -> minor update,
-* `z` -> bugfixes.
+
+- `x` -> major update,
+- `y` -> minor update,
+- `z` -> bugfixes.
 <p>Design: <a href="https://www.figma.com/file/JTSID0J1NLaALDLA1PFEWv/EE09?node-id=0%3A1">click</a></p>
 
 ## Branches
 
 <p>Conception based on article: <a href="https://nvie.com/posts/a-successful-git-branching-model/">click</a></p>
 
-| Branch name           |      Description          |
-| :-------------------- | :-----------------------: |
-| main                  |      Master branch (tagged branch, actions hooked on)                                                                 |
-| torelease:*           |      After pull from dev, there should be only bugfixes <br> -> after repaired, pull to `master` and `dev`            |
-| dev                   |      Developed branch: <br> incoming from `feature` and `torelease` (bugfixes), <br> coming to `torelease`            |
-| feature:*             |      Single feature, eg. `feature:app-button`                                                                         |
-
+| Branch name  |                                              Description                                              |
+| :----------- | :---------------------------------------------------------------------------------------------------: |
+| main         |                           Master branch (tagged branch, actions hooked on)                            |
+| torelease:\* | After pull from dev, there should be only bugfixes <br> -> after repaired, pull to `master` and `dev` |
+| dev          | Developed branch: <br> incoming from `feature` and `torelease` (bugfixes), <br> coming to `torelease` |
+| feature:\*   |                               Single feature, eg. `feature:app-button`                                |
 
 ## Installation
 
@@ -55,6 +55,7 @@ To run properly you should use three terminals, two for server:
 cd server
 npm run watch:js
 ```
+
 ```bash
 cd server
 npm run watch:ts
@@ -72,22 +73,28 @@ npm run watch
 ### Unit tests:
 
 Unit tests should be always written for your components and turn on:
+
 ```bash
 cd server
 npm run test:unit
 ```
+
 ```bash
 cd frontend
 npm run test:unit
 ```
 
 ### E2E tests:
+
 End-to-end tests are made with cypress framework, you should run them before commiting to catch up potential bugs:
+
 ```bash
 cd frontend
 npm run test:e2e
 ```
+
 If you want to see graphic course of testing - run:
+
 ```bash
 cd frontend
 npm run test:e2e:browser
