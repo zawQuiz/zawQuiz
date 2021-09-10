@@ -1,2 +1,4 @@
-cd frontend
-echo test
+echo "linting.."
+npm run lint:script:fix
+npm run lint:style:fix
+npx prettier -w -u .
