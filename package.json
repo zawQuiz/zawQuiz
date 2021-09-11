@@ -1,7 +1,0 @@
-{
-  "name": "zawquiz",
-  "scripts": {
-    "lint:script:fix": "cd frontend && npm run lint:script:fix",
-    "lint:style:fix": "cd frontend && npm run lint:style:fix"
-  }
-}
