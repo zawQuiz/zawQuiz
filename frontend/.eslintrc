@@ -11,6 +11,7 @@
     "@vue/typescript/recommended",
     "@vue/prettier",
     "@vue/prettier/@typescript-eslint",
+    "plugin:cypress/recommended",
     "plugin:tailwind/recommended"
   ],
   "parserOptions": {
