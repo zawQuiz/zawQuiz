@@ -1,6 +1,5 @@
 #!/bin/sh
+# cd frontend
 # npm run lint:script:fix
-npx eslint --ext .ts,vue --ignore-path .gitignore ./frontend --fix
 # npm run lint:style:fix
-npx stylelint frontend/src/**/*.{css,scss,vue} --fix
 npx prettier -w -u .
