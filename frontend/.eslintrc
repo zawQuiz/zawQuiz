@@ -6,13 +6,13 @@
     "node": true
   },
   "extends": [
-    "plugin:vue/vue3-recommended",
     "eslint:recommended",
+    "@vue/prettier/@typescript-eslint",
     "@vue/typescript/recommended",
     "@vue/prettier",
-    "@vue/prettier/@typescript-eslint",
-    "plugin:cypress/recommended",
-    "plugin:tailwind/recommended"
+    "plugin:vue/vue3-recommended",
+    "plugin:tailwind/recommended",
+    "plugin:cypress/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 2021
