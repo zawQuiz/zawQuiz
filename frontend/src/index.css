@@ -25,3 +25,15 @@
     src: url('./assets/font/Poppins-Bold.ttf') format('truetype');
   }
 }
+
+@layer components {
+  /* Buton, Input and Select Base styles */
+  .bis_base {
+    @apply flex items-center justify-center w-full font-bold rounded-[0.625rem] text-lg md:text-2xl cursor-pointer h-[45px] md:h-[60px] transition-colors bg-primary hover:bg-primary-dark active:bg-primary-dark focus:bg-primary-dark;
+  }
+
+  .disabled {
+    @apply opacity-50;
+    pointer-events: none;
+  }
+}
