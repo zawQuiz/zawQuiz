@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "scripts": {
     "watch": "vite",
-    "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
+    "build": "vue-tsc --noEmit && vite build",
+    "test:unit": "jest",
+    "test:e2e": "cypress run",
+    "test:e2e:browse": "cypress open",
+    "install:cypress": "cypress install",
     "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore .",
     "lint:script:fix": "eslint --ext .ts,vue --ignore-path .gitignore . --fix",
     "lint:style": "stylelint src/**/*.{css,scss,vue}",
     "lint:style:fix": "stylelint src/**/*.{css,scss,vue} --fix",
-    "test:e2e:browse": "cypress open",
-    "test:e2e": "cypress run",
-    "install:cypress": "cypress install",
     "prepare:husky": "cd .. && husky install frontend/.husky"
   },
   "dependencies": {
@@ -21,7 +22,11 @@
     "vue-router": "^4.0.11"
   },
   "devDependencies": {
+    "@tailwindcss/jit": "^0.1.18",
     "@testing-library/cypress": "^8.0.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/vue": "^6.4.2",
+    "@types/jest": "^27.0.2",
     "@types/node": "^16.7.11",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
@@ -38,6 +43,7 @@
     "eslint-plugin-tailwind": "^0.2.1",
     "eslint-plugin-vue": "^7.17.0",
     "husky": "^7.0.0",
+    "jest-transform-stub": "^2.0.0",
     "lint-staged": "^11.1.2",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
@@ -45,8 +51,10 @@
     "stylelint-config-recommended": "^5.0.0",
     "stylelint-config-standard": "^22.0.0",
     "tailwindcss": "^2.2.10",
+    "ts-jest": "^27.0.7",
     "typescript": "^4.3.2",
     "vite": "^2.5.2",
-    "vue-tsc": "^0.2.2"
+    "vue-tsc": "^0.2.2",
+    "vue3-jest": "^27.0.0-alpha.1"
   }
 }
