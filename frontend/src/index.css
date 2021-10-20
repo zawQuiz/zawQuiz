@@ -29,7 +29,7 @@
 @layer components {
   /* Buton, Input and Select Base styles */
   .bis_base {
-    @apply flex items-center justify-center w-full font-bold rounded-[0.625rem] text-lg md:text-2xl cursor-pointer h-[45px] md:h-[60px] transition-colors bg-primary hover:bg-primary-dark active:bg-primary-dark focus:bg-primary-dark;
+    @apply flex items-center w-full font-bold rounded-[0.625rem] text-lg md:text-2xl cursor-pointer h-[45px] md:h-[60px] transition-colors bg-primary hover:bg-primary-dark active:bg-primary-dark focus:bg-primary-dark text-left px-[15px] md:px-[30px];
   }
 
   .disabled {
