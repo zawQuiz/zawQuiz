@@ -1,14 +1,37 @@
 <script lang="ts" setup>
-import { ButtonHTMLAttributes } from 'vue';
+import { PropType } from 'vue';
 
-export interface IButtonProps extends ButtonHTMLAttributes {
-    variant: "success" | "danger" | "solid";
-    disabled?: boolean;
-    title: string;
-    link?: string;
-}
+export type TButtonNode = "a" | "router-link" | "button";
+export type TButtonVariant = "success" | "danger" | "solid";
+export type TButtonType = "button" | "submit" | "reset";
 
-const { variant, disabled, title, link, type } = defineProps<IButtonProps>();
+const { node, variant, disabled, link, type } = defineProps({
+    "node": {
+        type: String as PropType<TButtonNode>,
+        requried: false,
+        default: "button",
+    },
+    "variant": {
+        type: String as PropType<TButtonVariant>,
+        requried: false,
+        default: "primary",
+    },
+    "type": {
+        type: String as PropType<TButtonType>,
+        required: false,
+        default: "",
+    },
+    "disabled": {
+        type: Boolean,
+        required: false,
+        default: false,
+    },
+    "link": {
+        type: String,
+        required: false,
+        default: "",
+    },
+})
 
 const emits = defineEmits(['onClick']);
 
@@ -21,20 +44,17 @@ const btnClassVaraint = variant !== 'solid' ? `button-${variant}` : '';
 </script>
 
 <template>
-    <router-link
-        v-if="link"
-        :to="link"
-        :class="['bis_base', btnClassVaraint, { disabled: disabled }]"
-        :disabled="disabled"
-    >{{ title }}</router-link>
-
-    <button
-        v-else
-        :class="['bis_base', btnClassVaraint, { disabled: disabled }]"
+    <component
+        :is="node"
+        :class="['bis-base', btnClassVaraint, { disabled: disabled }]"
         :type="type"
         :disabled="disabled"
+        :href="node == 'a' ? link : null"
+        :to="node == 'router-link' ? link : null"
         @click="handleClick"
-    >{{ title }}</button>
+    >
+        <slot></slot>
+    </component>
 </template>
 
 <style lang="postcss" scoped>

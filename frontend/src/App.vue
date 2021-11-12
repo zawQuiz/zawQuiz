@@ -16,21 +16,21 @@ function click() {
     <router-view />
     <div class="w-3/4">
       <p>Buttons:</p>
-      <AppButton variant="solid" title="Button" />
-      <AppButton variant="success" title="Button" />
-      <AppButton variant="danger" title="Button" @onClick="click" />
+      <AppButton variant="solid">Button</AppButton>
+      <AppButton variant="success">Button</AppButton>
+      <AppButton variant="danger" @onClick="click">Button</AppButton>
 
       <p>Disabled Button:</p>
-      <AppButton variant="success" title="Button" disabled />
+      <AppButton variant="success" disabled>Button</AppButton>
 
       <p>Button Link:</p>
-      <AppButton variant="solid" title="Button" link="/zaloguj" />
+      <AppButton variant="solid" link="/zaloguj">Button</AppButton>
 
       <AppInput name="text" label="Input" placeholder="placeholder" />
 
       <AppLogo />
 
-      <AppText variant="h1" text="jajco" :size="30" />
+      <AppText variant="h1" text="jajco" size="2xl" />
 
       <div class="flex">
         <AppIcon icon="home" />

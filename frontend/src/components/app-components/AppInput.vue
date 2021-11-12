@@ -16,7 +16,7 @@ const { errorMessage, value } = useField(name);
     <div>
         <label class="px-[15px] mb-px">{{ label }}</label>
         <input
-            :class="['bis_base', { disabled: disabled }]"
+            :class="['bis-base', { disabled: disabled }]"
             :type="type"
             :name="name"
             :placeholder="placeholder"
