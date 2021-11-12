@@ -9,9 +9,10 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "types": ["node", "jest"],
+    "types": ["node", "jest", "vite/client"],
     "lib": ["esnext", "dom"],
     "baseUrl": ".",
+    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
     "paths": {
       "@/*": ["./src/*"]
     }
