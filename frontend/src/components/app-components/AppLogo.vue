@@ -1,23 +1,22 @@
 <script setup lang="ts">
 
-interface ILogoProps {
-    small?: boolean;
-}
-
-const { small } = defineProps<ILogoProps>()
-
-const whiteText = small ? "z" : "zaw"
-const greenText = small ? "Q" : "Quiz"
+const { small } = defineProps({
+    "small": {
+        type: Boolean,
+        required: false,
+        default: false
+    }
+})
 
 </script>
 
 <template>
     <router-link to="/">
         <p class="font-bold text-[36px]">
-            {{ whiteText }}
+            {{ small ? "z" : "zaw" }}
             <!--
             -->
-            <span class="text-green">{{ greenText }}</span>
+            <span class="text-green">{{ small ? "Q" : "Quiz" }}</span>
         </p>
     </router-link>
 </template>

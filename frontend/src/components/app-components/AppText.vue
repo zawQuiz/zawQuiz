@@ -7,7 +7,7 @@ export type TTextSize = "xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "2xl" | "3x
 
 const { weight, uppercase, size, node } = defineProps({
     "weight": {
-        type: String,
+        type: String as PropType<TTextWeight>,
         required: false,
         default: "normal",
     },
