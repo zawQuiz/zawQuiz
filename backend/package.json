@@ -1,0 +1,41 @@
+{
+  "name": "zawquiz-backend",
+  "version": "0.0.1",
+  "description": "Backend for ZawQuiz project",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "watch": "ts-node-dev --respawn ./src/index.ts",
+    "test": "jest --forceExit --collect-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zawQuiz/zawQuiz.git"
+  },
+  "keywords": [
+    "backend",
+    "zawQuiz",
+    "fastify",
+    "node",
+    "mongoDB"
+  ],
+  "author": "Dawid Linek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zawQuiz/zawQuiz/issues"
+  },
+  "homepage": "https://github.com/zawQuiz/zawQuiz#readme",
+  "devDependencies": {
+    "@types/expect": "^24.3.0",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.9",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "fastify": "^3.24.0"
+  }
+}
