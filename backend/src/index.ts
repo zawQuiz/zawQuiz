@@ -1,18 +1,3 @@
-import fastify from 'fastify';
+import startServer from "./server";
 
-const server = fastify();
-
-server.get('/', async (request, reply) => {
-  return {
-    hello: 'world'
-  };
-});
-
-const start = async () => {
-    await server.listen(3000);
-    return server;
-};
-start();
-
-export default start;
-
+startServer()
