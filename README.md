@@ -6,8 +6,7 @@
 [![made-with-vue3](https://img.shields.io/badge/Made%20with-Vue3-3EAF7C.svg)](https://www.vuejs.com/)
 [![made-with-vite](https://img.shields.io/badge/Made%20with-Vite-b939FE.svg)](https://vitejs.dev/)
 [![made-with-typescript](https://img.shields.io/badge/Made%20with-TypeScript-2F74C0.svg)](https://www.typescriptlang.org/)
-![Backend Tests](https://github.com/zawQuiz/zawQuiz/actions/workflows/testBackend/badge.svg)
-
+![backendtests](https://github.com/zawQuiz/zawQuiz/actions/workflows/Backend-Tests.yml/badge.svg)
 
 ## About
 
