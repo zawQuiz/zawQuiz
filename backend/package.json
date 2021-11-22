@@ -10,7 +10,7 @@
     "watch:js": "tsc && node dist/index.js",
     "test:unit": "jest --forceExit --runInBand",
     "test:coverage": "jest --forceExit --coverage --runInBand",
-    "format:eslint":"eslint src/** --fix"
+    "format:eslint": "eslint src/** --fix"
   },
   "repository": {
     "type": "git",
@@ -44,6 +44,8 @@
     "typescript": "^4.5.2"
   },
   "dependencies": {
-    "fastify": "^3.24.0"
+    "dotenv": "^10.0.0",
+    "fastify": "^3.24.0",
+    "mongoose": "^6.0.13"
   }
 }

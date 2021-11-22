@@ -13,3 +13,5 @@
 /backend/coverage/**
 
 **/node_modules/**
+
+**/.env
