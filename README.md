@@ -37,8 +37,6 @@ First of all, you need to create copy of `.env.example` file -> change name to `
 ```bash
 cd server
 npm install
-npm run setup:migration
-npm run setup:dbseed
 
 cd ..
 
@@ -77,6 +75,7 @@ Unit tests should be always written for your components and turn on:
 ```bash
 cd server
 npm run test:unit
+npm run test:coverage
 ```
 
 ```bash
@@ -98,4 +97,11 @@ If you want to see graphic course of testing - run:
 ```bash
 cd frontend
 npm run test:e2e:browser
+```
+
+### Code Formating
+
+Project formating with eslint configuration
+``` bash
+npm run format:eslint
 ```

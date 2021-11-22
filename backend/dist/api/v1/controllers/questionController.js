@@ -11,6 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 function get(request, reply) {
     return __awaiter(this, void 0, void 0, function* () {
+        request.body;
+        reply.status;
         return {
             'message': "Tu będą pytania"
         };
