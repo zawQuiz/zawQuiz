@@ -1,5 +1,5 @@
 import { FastifyInstance, HookHandlerDoneFunction, RegisterOptions } from 'fastify';
-import { UserRoutes, QuestionRoutes } from './routes';
+import { UserRoutes, QuestionRoutes, AuthRoutes } from './routes';
 
 export default (
   fastify: FastifyInstance,
@@ -8,5 +8,6 @@ export default (
 ) => {
   fastify.register(QuestionRoutes, { prefix: 'questions' });
   fastify.register(UserRoutes, { prefix: 'users' });
+  fastify.register(AuthRoutes, { prefix: 'auth' });
   done();
 };
