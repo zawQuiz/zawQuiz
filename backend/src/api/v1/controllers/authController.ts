@@ -1,19 +1,57 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import { addUser } from "../services/userService";
-import { findOrAddGoogleUser } from "../services/userService";
+import { addUser, findOrAddGoogleUser } from "../services/userService";
 import axios from "axios";
-import { generateToken } from "../services/AuthService";
+import { generateToken } from "../services/authService";
 import { User } from "../../../models";
 
-async function registerUser(request: any, reply: FastifyReply) {
-  reply.send(
-    await addUser(
-      request.body.email,
-      request.body.password,
-      request.body.username
-    )
-  );
+
+
+type TRegisterRequest= FastifyRequest<{
+  Body: {
+    email?:string,
+    password?:string,
+    username?:string,
+  }
+}>
+
+async function registerUser(request: TRegisterRequest, reply: FastifyReply) {
+  
+  const { email, password, username } = request.body;
+  const emailCounts = await User.count({ email })
+
+  if(emailCounts > 0 ){
+    reply
+      .status(400)
+      .send({
+        error: "User already exists"
+      });
+  }
+  
+  reply.send({
+    message: "User sucessfully created",
+    data: await addUser({email, password, username})
+  })
 }
+
+async function check(request: any,reply:any) {
+  try {
+    await request.jwtVerify()
+    if(Math.round(Date.now()/1000)>request.user.expire_at){
+      return reply.code(401).send({
+        'error':"Token expired"
+      })
+    }
+    return reply.send({
+      'message':"OK"
+    });
+
+  } catch (err) {
+    reply.code(401).send({
+      'error':"Unauthorized"
+    })
+  }
+}
+
 async function loginUser(request: any, reply: FastifyReply) {
     let user=await User.findOne({email:request.body.email});
     if(!user){
@@ -64,5 +102,6 @@ async function loginGoogleUserCallback(request: any) {
 export default {
   registerUser,
   loginGoogleUserCallback,
-  loginUser
+  loginUser,
+  check
 };

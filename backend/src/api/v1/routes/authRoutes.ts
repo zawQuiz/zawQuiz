@@ -5,7 +5,8 @@ export default function (fastify: any, opts: RegisterOptions, done: HookHandlerD
   
     fastify.post('/register',authController.registerUser)
     fastify.post('/login',authController.loginUser)
-    fastify.get('/login/google/callback',authController.loginGoogleUserCallback)
+    fastify.get('/check',authController.check)
+    fastify.get('/google/callback',authController.loginGoogleUserCallback)
 
     done();
 }

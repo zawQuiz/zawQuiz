@@ -7,7 +7,7 @@ export default (
   done: HookHandlerDoneFunction,
 ) => {
   fastify.register(QuestionRoutes, { prefix: 'questions' });
-  fastify.register(UserRoutes, { prefix: 'users' });
+  fastify.register(UserRoutes, { prefix: '/users' });
   fastify.register(AuthRoutes, { prefix: 'auth' });
   done();
 };

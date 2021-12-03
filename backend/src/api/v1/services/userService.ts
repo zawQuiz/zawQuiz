@@ -11,6 +11,7 @@ export async function findOrAddGoogleUser(
   if (user) {
     return user;
   }
+
   user = new User({
     externalId,
     email,
@@ -18,19 +19,24 @@ export async function findOrAddGoogleUser(
     profilePhoto,
     source: "google",
   });
+  
+  
   return user.save();
 }
 
-export async function addUser(
+interface IAddUser {
   email: string,
   password: string,
-  username: string | null
-) {
+  username: string,
+}
+
+export async function addUser({ email, password, username }: IAddUser) {
   const user = new User({
     email,
     password: bcrypt.hashSync(password, 10),
     username,
     source: "email",
   });
+
   return await user.save();
 }

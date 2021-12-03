@@ -1,6 +1,6 @@
 import { FastifyReply } from 'fastify';
 
-async function get(request:any,reply:FastifyReply) {
+async function get(request:any, reply:FastifyReply) {
     request.body;
     reply.status
     return {

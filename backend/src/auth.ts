@@ -7,6 +7,21 @@ export default async (fastify: any) => {
     secret: process.env.APP_KEY
   })
 
+  fastify.decorate("authenticate", async function(request, reply) {
+    try {
+      await request.jwtVerify()
+      if(Math.round(Date.now()/1000)>request.user.expire_at){
+        reply.code(401).send({
+          'error':"Token expired"
+        })
+      }
+    } catch (err) {
+      reply.code(401).send({
+        'error':"Unauthorized"
+      })
+    }
+  })
+
   fastify.register(oauthPlugin,{
     name: 'googleOAuth2',
     scope: ['profile','email'],
@@ -17,8 +32,8 @@ export default async (fastify: any) => {
       },
       auth: oauthPlugin.GOOGLE_CONFIGURATION
     },
-    startRedirectPath: '/api/v1/auth/login/google',
-    callbackUri: process.env.APP_URL+'/api/v1/auth/login/google/callback'
+    startRedirectPath: '/api/v1/auth/google',
+    callbackUri: process.env.APP_URL+'/api/v1/auth/google/callback'
   })
 
   fastify.register(oauthPlugin, {
@@ -30,8 +45,8 @@ export default async (fastify: any) => {
       },
       auth: oauthPlugin.FACEBOOK_CONFIGURATION
     },
-    startRedirectPath: '/api/v1/auth/login/facebook',
-    callbackUri:  process.env.APP_URL+'/api/v1/auth/login/facebook/callback'
+    startRedirectPath: '/api/v1/auth/facebook',
+    callbackUri:  process.env.APP_URL+'/api/v1/auth/facebook/callback'
   })
 
 };

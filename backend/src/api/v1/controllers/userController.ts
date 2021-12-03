@@ -1,12 +1,12 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
+import { User } from '../../../models';
 // import { addGoogleUser } from '../services/UserService';
 
-async function get(request:FastifyRequest,reply:FastifyReply) {
-    request.body;
-    reply.status
-    return {
-        'message':"Tu będą użytkownicy"
-    };
+async function me(request:any,reply:FastifyReply) {
+    reply.send({
+        'message':"OK",
+        'data':await User.findById(request.user.userID)
+    });
 }
 
 async function registerGoogleUser(request:FastifyRequest,reply:FastifyReply) {
@@ -16,6 +16,6 @@ async function registerGoogleUser(request:FastifyRequest,reply:FastifyReply) {
 }
 
 export default {
-    get,
+    me,
     registerGoogleUser
 }
